@@ -10,7 +10,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     } else if (cmd == 104) {
         maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
         maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
-    } else if (cmd == 24) {
+    } else if (cmd == 5) {
         maqueen.motorStop(maqueen.Motors.All)
     } else if (cmd == 22) {
         maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 30)
