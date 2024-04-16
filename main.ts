@@ -18,7 +18,11 @@ radio.onReceivedNumber(function (receivedNumber) {
         maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 40)
     } else if (cmd == 6) {
         basic.showArrow(ArrowNames.West)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 20)
+        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 20)
     } else if (cmd == 7) {
+        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 20)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 20)
         basic.showArrow(ArrowNames.East)
     }
 })
