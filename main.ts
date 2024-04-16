@@ -12,18 +12,21 @@ radio.onReceivedNumber(function (receivedNumber) {
         maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
     } else if (cmd == 5) {
         maqueen.motorStop(maqueen.Motors.All)
+        basic.showIcon(IconNames.No)
     } else if (cmd == 22) {
         maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 40)
+        basic.showString("F")
     } else if (cmd == 23) {
         maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 40)
+        basic.showString("R")
     } else if (cmd == 6) {
-        basic.showArrow(ArrowNames.West)
-        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 20)
-        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 20)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CCW, 30)
+        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 30)
+        basic.showString("R")
     } else if (cmd == 7) {
-        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 20)
-        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 20)
-        basic.showArrow(ArrowNames.East)
+        maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CCW, 30)
+        maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 30)
+        basic.showString("L")
     }
 })
 input.onButtonPressed(Button.A, function () {
@@ -38,7 +41,7 @@ let cmd = 0
 radio.setGroup(42)
 maqueen.motorStop(maqueen.Motors.All)
 cmd = 999
-basic.showIcon(IconNames.Ghost)
+basic.showIcon(IconNames.Yes)
 basic.forever(function () {
 	
 })
