@@ -13,9 +13,13 @@ radio.onReceivedNumber(function (receivedNumber) {
     } else if (cmd == 5) {
         maqueen.motorStop(maqueen.Motors.All)
     } else if (cmd == 22) {
-        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 30)
+        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 40)
     } else if (cmd == 23) {
-        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 30)
+        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 40)
+    } else if (cmd == 6) {
+        basic.showArrow(ArrowNames.West)
+    } else if (cmd == 7) {
+        basic.showArrow(ArrowNames.East)
     }
 })
 input.onButtonPressed(Button.A, function () {
@@ -27,10 +31,10 @@ input.onButtonPressed(Button.B, function () {
     maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
 })
 let cmd = 0
-radio.setGroup(1)
+radio.setGroup(42)
 maqueen.motorStop(maqueen.Motors.All)
 cmd = 999
-basic.showIcon(IconNames.Duck)
+basic.showIcon(IconNames.Ghost)
 basic.forever(function () {
 	
 })
